@@ -1,0 +1,1910 @@
+{
+    "nodes": [
+        {
+            "node_id": "HeartCake: Start loop",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "BlankStare",
+                    "voice_clip": "Iblinkoncetwice",
+                    "text": "I blink—once, twice—and find a study table in front of me. A mirror that is supposed to reflect my own face shows a stranger's face instead."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "BlankStare",
+                    "voice_clip": "itrytomovemybody",
+                    "text": "I try to move my body and do something, yet I don't know whose body this is that moves as I move, and thinks as I think."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Where am I?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "add_var_once": "checkloopone",
+            "add_var_once_value": 1,
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "CaughtOfGuard",
+                    "voice_clip": "Icanmovemyhandsandmyeyes",
+                    "text": "I can move my hands and my eyes. As I look around, I notice this study room is different from the one I have at home. Clearly, this isn't mine."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "CaughtOfGuard",
+                    "text": "Maybe this is just a dream... and maybe I should just play along since I'm already here."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Play my part as I'm already here",
+                    "target_node": "Play my part as I'm already here"
+                },
+                {
+                    "choice_text": "I'm not interested, this is weird",
+                    "target_node": "I'm not interested, this is weird"
+                }
+            ]
+        },
+        {
+            "node_id": "Why am I here?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "add_var_once": "checkloopone",
+            "add_var_once_value": 1,
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Confused",
+                    "text": "I see a sticky note on the laptop that reads: \"I should confess tonight.\" Just as I read that, I feel my heart skip a beat."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "Confused",
+                    "text": "A smile beams on my face, but not of my own volition—as if this body isn't mine alone."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Why should I confess?",
+                    "target_node": "Why should I confess?"
+                },
+                {
+                    "choice_text": "This is dumb.",
+                    "target_node": "This is dumb."
+                }
+            ]
+        },
+        {
+            "node_id": "Why should I confess?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "checkloopone",
+            "set_value": 3,
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Confused",
+                    "text": "A girl's voice echoes in my head, sounding completely different from my own."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Confused",
+                    "text": "What else?! I've been saving my confession for two years! I've had enough. I can't wait anymore. Let's just confess and see what happens!"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Okay... for now.",
+                    "target_node": "Checkpoint loop 1"
+                },
+                {
+                    "choice_text": "Well, actually, now I'm invested.",
+                    "target_node": "Checkpoint loop 1"
+                }
+            ]
+        },
+        {
+            "node_id": "This is dumb.",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Talking",
+                    "text": "The voice in my head replies to my thought."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Talking",
+                    "text": "Well, keeping your feelings to yourself for two years is dumb enough. If these feelings aren't going to fade, it feels right to just say them out loud and make some progress."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "...",
+                    "target_node": "..."
+                }
+            ]
+        },
+        {
+            "node_id": "Play my part as I'm already here",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [],
+            "choices": []
+        },
+        {
+            "node_id": "I'm not interested, this is weird",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "WideSmile",
+                    "text": "As I think that, a voice suddenly emerges in my mind."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "WideSmile",
+                    "text": "Hey... this isn't weird, this is exciting! I guess you have a very logical 'T' mind. Knowing that is actually great!"
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "WideSmile",
+                    "text": "You can balance my emotional 'F' side because I'm so excited about this. Please accompany me through this!"
+                },
+                {
+                    "speaker": "You",
+                    "expression": "WideSmile",
+                    "text": "She speaks in a fast tempo, her pitch getting higher with every word."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Hah.. this has gotten much weirder",
+                    "target_node": "Hah.. this has gotten much weirder"
+                },
+                {
+                    "choice_text": "Do I have any other option??",
+                    "target_node": "Do I have any other option??"
+                },
+                {
+                    "choice_text": "I guess",
+                    "target_node": "I guess"
+                }
+            ]
+        },
+        {
+            "node_id": "Checkpoint loop 1",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "add_var_on_first_visit": "checkloopone",
+            "add_value": 3,
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Confused",
+                    "text": "What do you want to think about?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Where am I?",
+                    "target_node": "Where am I?"
+                },
+                {
+                    "choice_text": "Who am I?",
+                    "target_node": "Who am I?"
+                },
+                {
+                    "choice_text": "Why am I here?",
+                    "target_node": "Why am I here?"
+                },
+                {
+                    "choice_text": "I want to confess",
+                    "target_node": "I want to confess",
+                    "req_var": "checkloopone",
+                    "req_operator": ">=",
+                    "req_value": 3
+                },
+                {
+                    "choice_text": "Why didn't you confess on your graduation day?",
+                    "target_node": "Why didn't you confess on your graduation day?",
+                    "req_var": "ending3rdMarch",
+                    "req_operator": "==",
+                    "req_value": 1
+                },
+                {
+                    "choice_text": "Do we actually have a chance?",
+                    "target_node": "Do we actually have chance?",
+                    "req_var": "endingDM",
+                    "req_operator": "==",
+                    "req_value": 1
+                },
+                {
+                    "choice_text": "Don't like him. You don't deserve him. Block you on private chat? That's too much.",
+                    "target_node": "Don't like him. You don't deserve him. Block you on private chat? That's too much",
+                    "req_var": "endingChat",
+                    "req_operator": "==",
+                    "req_value": 1
+                },
+                {
+                    "choice_text": "What's the purpose of this game...",
+                    "target_node": "What's the purpose of this game...",
+                    "req_var": "endingTotal",
+                    "req_operator": "==",
+                    "req_value": 5
+                },
+                {
+                    "choice_text": "You have achieved all endings",
+                    "target_node": "You have achieved all ending",
+                    "req_var": "endingTotal",
+                    "req_operator": "==",
+                    "req_value": 6
+                }
+            ]
+        },
+        {
+            "node_id": "Who am I?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "add_var_once": "checkloopone",
+            "add_var_once_value": 1,
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "WideSmile",
+                    "text": "I look at the mirror."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "WideSmile",
+                    "text": "This is me. This is you. We are in this together."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "WideSmile",
+                    "text": "The voice speaks with an unfamiliar, yet comforting tone."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I am not you.",
+                    "target_node": "I am not you."
+                },
+                {
+                    "choice_text": "So I have to do what you have to do.",
+                    "target_node": "So I have to do what you have to do."
+                },
+                {
+                    "choice_text": "Wow, did I just get isekaied?",
+                    "target_node": "Wow, do I get isekaied?"
+                }
+            ]
+        },
+        {
+            "node_id": "...",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [],
+            "choices": []
+        },
+        {
+            "node_id": "Hah.. this has gotten much weirder",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "SadPouty",
+                    "text": "Uh, hey, that hurts."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Do I have any other option??",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "CaughtOfGuard",
+                    "text": "Nooo, accompany me, please!"
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "I am not you.",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Excited",
+                    "text": "I hear the voice again."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Excited",
+                    "text": "Yes, you are me. We are here. We are in this together."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "So I have to do what you have to do.",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Proud",
+                    "text": "You are so smart! I don't have to worry then! I picked the right person for this."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Wow, do I get isekaied?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Joyful",
+                    "text": "Haha. Funny... but no, you're not. You can think about it that way if you want, though."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Joyful",
+                    "text": "Anyway... are you ready for this adventure of feelings? Haha."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Wow, I can even hear your laugh.",
+                    "target_node": "Wow, I can even hear your laugh"
+                },
+                {
+                    "choice_text": "I see.",
+                    "target_node": "I see"
+                }
+            ]
+        },
+        {
+            "node_id": "Wow, I can even hear your laugh",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [],
+            "choices": []
+        },
+        {
+            "node_id": "I see",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [],
+            "choices": []
+        },
+        {
+            "node_id": "I guess",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Checkpoint loop 1",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Joyful",
+                    "text": "Yay, thank you!"
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "I want to confess",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AvoidEyeContact",
+                    "text": "Hey, I have some ideas... which one do you think we should try first?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Confess through Insta DM's",
+                    "target_node": "Confess through Insta DM's"
+                },
+                {
+                    "choice_text": "Confess through chat app",
+                    "target_node": "Confess through chat app"
+                },
+                {
+                    "choice_text": "Writing a love letter",
+                    "target_node": "Writing a love letter"
+                },
+                {
+                    "choice_text": "Don't you have any better idea, like confessing face to face?",
+                    "target_node": "Don't you have any better idea, like confessing face to face?"
+                },
+                {
+                    "choice_text": "WAIT... You have to tell me who this guy is!",
+                    "target_node": "WAIT... You have to tell me who's this guy!"
+                },
+                {
+                    "choice_text": "I want to stop you",
+                    "target_node": "I want to stop you",
+                    "req_var": "endingTotal",
+                    "req_operator": ">=",
+                    "req_value": 4
+                }
+            ]
+        },
+        {
+            "node_id": "Confess through Insta DM's",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "HappyClosedEyes",
+                    "text": "I open the phone.\nI feel a sudden rush of excitement. I look at his profile picture and notice something."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "We don't follow him on Insta.",
+                    "target_node": "We don't follow him on Insta."
+                },
+                {
+                    "choice_text": "Open the DM",
+                    "target_node": "Open the DM"
+                }
+            ]
+        },
+        {
+            "node_id": "Confess through chat app",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "WideSmile",
+                    "text": "I open the phone and find his contact."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Shouldn't we think this through?",
+                    "target_node": "Shouldn't we think this through?"
+                },
+                {
+                    "choice_text": "Chat him",
+                    "target_node": "Chat him"
+                }
+            ]
+        },
+        {
+            "node_id": "WAIT... You have to tell me who's this guy!",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Thinking",
+                    "text": "Ah... right... I thought you knew him. Or maybe you do, you just forgot."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I don't.",
+                    "target_node": "I don't"
+                },
+                {
+                    "choice_text": "I mean, I think it's better to think of him as my crush, but still, I need some context.",
+                    "target_node": "I mean, I think it's better to think of him as my crush, but still, I need to have some context"
+                }
+            ]
+        },
+        {
+            "node_id": "I don't",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "Well, actually, I don't really know much about him...\nBut! He's cute, and exactly my type. His eyes are so pretty, and his smile can easily make my day."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "His voice is a bit on the higher side, but it sounds perfect. He's taller than me, and super smart too. He likes to play games with his friends and make funny content."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "He loves to joke and laugh. He naturally gives advice like a leader. Some people might find him a little annoying because of it, but everyone agrees he always does his best to help!"
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "And I like him. I've been watching him from afar for way too long. Let's put an end to these bittersweet feelings!\nOkay? Let's get this done!"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I want to confess",
+                    "target_node": "I want to confess"
+                }
+            ]
+        },
+        {
+            "node_id": "I mean, I think it's better to think of him as my crush, but still, I need to have some context",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "BashfulBlush",
+                    "text": "Yes! He is our crush!\nHe's cute, and exactly my type. His eyes are so pretty, and his smile can easily make my day."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "BashfulBlush",
+                    "text": "His voice is a bit on the higher side, but it sounds perfect. He's taller than me, and super smart too. He likes to play games with his friends and make funny content."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "BashfulBlush",
+                    "text": "He loves to joke and laugh. He naturally gives advice like a leader. Some people might find him a little annoying because of it, but everyone agrees he always does his best to help!"
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "BashfulBlush",
+                    "text": "And I like him. I've been watching him from afar for way too long. Let's put an end to these bittersweet feelings!\nOkay? Let's get this done!"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I want to confess",
+                    "target_node": "I want to confess"
+                }
+            ]
+        },
+        {
+            "node_id": "Don't you have any better idea, like confessing face to face?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "SadPouty",
+                    "text": "Umm... I'm not even close to him, so asking him to meet up is something I couldn't even imagine."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "SadPouty",
+                    "text": "We will see him soon, though. Today is February 21st, and we will meet him on March 3rd for graduation day!\nBut... I can't even look him in the eyes for too long. Are you sure we should wait until then?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Wait until graduation",
+                    "target_node": "Wait untill graduation"
+                },
+                {
+                    "choice_text": "Have you ever talked to him?",
+                    "target_node": "Have you ever talk to him?"
+                }
+            ]
+        },
+        {
+            "node_id": "Have you ever talk to him?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Melancholic",
+                    "text": "It depends on what you define as a conversation...\nI can only answer: yes and no. Yes, I have talked to him before. But no, we've never had a proper conversation. I didn't even have a chance."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Wait until graduation",
+                    "target_node": "Wait untill graduation"
+                },
+                {
+                    "choice_text": "I want to confess",
+                    "target_node": "I want to confess"
+                }
+            ]
+        },
+        {
+            "node_id": "Wait untill graduation",
+            "background": "bg_graduation",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Excited",
+                    "position": "top_center",
+                    "text": "March 3rd — Graduation Day!\nI can't wait. He is going to look so, SO handsome."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Excited",
+                    "position": "top_center",
+                    "text": "Honestly, I don't even wish for anything more. Being able to watch him from afar is a blessing in itself. I won't have to battle my racing heart, and nobody will think I'm a stalker for staring."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Excited",
+                    "position": "top_center",
+                    "text": "Keeping my distance is perfect. No one will realize I'm watching him."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Um, excuse me, aren't we supposed to be confessing?",
+                    "target_node": "Hey we will walk pass him"
+                },
+                {
+                    "choice_text": "Just confess already. How long are you going to stalk him like a creep?",
+                    "target_node": "Hey we will walk pass him"
+                }
+            ]
+        },
+        {
+            "node_id": "Hey we will walk pass him",
+            "background": "bg_graduation",
+            "bgm": "bgm_default",
+            "position": "top_center",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Melancholic",
+                    "position": "top_center",
+                    "text": "Here is the situation: I am on my way from the lobby to the graduation hall. To get there, I have to walk through a narrow hallway. And he is right there, taking photos with his friends."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Melancholic",
+                    "position": "top_center",
+                    "text": "I'm scared... I shouldn't embarrass myself... I..."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Ask him to talk to you in private!",
+                    "target_node": "We walk awkwardly pass him"
+                },
+                {
+                    "choice_text": "Look at him and send your message through your flirty eyes.",
+                    "target_node": "We walk awkwardly pass him"
+                },
+                {
+                    "choice_text": "If you like him that much, it's such a shame to let this chance slide!",
+                    "target_node": "We walk awkwardly pass him"
+                }
+            ]
+        },
+        {
+            "node_id": "We walk awkwardly pass him",
+            "background": "bg_graduation",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "ending3rdMarch",
+            "set_value": 1,
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Betrayed",
+                    "position": "top_center",
+                    "text": "I feel my body tense up and my heartbeat accelerates. A strange ache builds in my chest as we walk past him. I really want to be close to him, yet I feel myself walking faster to get away."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Betrayed",
+                    "position": "top_center",
+                    "text": "I really want to see him. But my face is locked forward, seeing nothing, hoping he doesn't notice my nervousness. Hoping he wouldn't feel disturbed by my existence."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Betrayed",
+                    "position": "top_center",
+                    "text": "I know. I don't deserve him. As all these thoughts force my legs to keep moving forward, I break my own heart."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "Betrayed",
+                    "position": "top_center",
+                    "text": "I let out a cowardly sigh and force a smile."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Betrayed",
+                    "position": "top_center",
+                    "text": "I'm so dumb."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Betrayed",
+                    "position": "top_center",
+                    "text": "And so, that was our failed attempt. I wanted to cry whenever we locked eyes, so as much as I regret it, I am thankful I didn't do something stupid. Confessing in front of him, knowing I'd only get rejected... it's never a good idea anyway."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Betrayed",
+                    "position": "top_center",
+                    "text": "Will I remember this moment for the rest of my life?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "You achieved an ending",
+                    "target_node": "You achieved ending"
+                }
+            ]
+        },
+        {
+            "node_id": "You achieved ending",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "add_var_on_first_visit": "endingTotal",
+            "add_value": 1,
+            "dialogues": [
+                {
+                    "speaker": "System",
+                    "expression": "NervousScared",
+                    "text": "Ending achieved. Start over?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Start again to continue.",
+                    "target_node": "HeartCake: Start loop"
+                },
+                {
+                    "choice_text": "You have achieved all endings",
+                    "target_node": "You have achieved all ending",
+                    "req_var": "endingTotal",
+                    "req_operator": "==",
+                    "req_value": 6
+                }
+            ]
+        },
+        {
+            "node_id": "Why didn't you confess on your graduation day?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "NervousScared",
+                    "text": "Hm? Because it's supposed to be a happy day.\nJust imagine the disturbance I would cause if I suddenly confessed to him. Why would I want to ruin somebody's special day?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I will try another method then! Just wait.",
+                    "target_node": "I want to confess"
+                },
+                {
+                    "choice_text": "Have some courage in yourself! We can still have a chance!",
+                    "target_node": "I want to confess"
+                }
+            ]
+        },
+        {
+            "node_id": "We don't follow him on Insta.",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Talking",
+                    "text": "Fun fact.\nHe and I are practically strangers. It's like we know each other by name, but we avoid each other in the hallways. We've never interacted outside of a few small coincidences in front of classes, at the cafeteria, or during school activities."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I see.",
+                    "target_node": "Open the DM"
+                },
+                {
+                    "choice_text": "That makes this have a very low probability.",
+                    "target_node": "Open the DM"
+                }
+            ]
+        },
+        {
+            "node_id": "Open the DM",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "requires_input": true,
+            "input_target_var": "confessionMessage",
+            "input_placeholder": "=XXX=",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "NervousScared",
+                    "text": "I need to type a message containing the words \"I like you\" to get a reply."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Send",
+                    "target_node": "Check DM Input"
+                }
+            ]
+        },
+        {
+            "node_id": "Check DM Input",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "",
+            "dialogues": [],
+            "choices": [
+                {
+                    "choice_text": "",
+                    "target_node": "Waiting For Theodore",
+                    "req_var": "confessionMessage",
+                    "req_operator": "contains",
+                    "req_value_string": "I like you"
+                },
+                {
+                    "choice_text": "",
+                    "target_node": "Message Sent Failed",
+                    "req_var": "confessionMessage",
+                    "req_operator": "not_contains",
+                    "req_value_string": "I like you"
+                }
+            ]
+        },
+        {
+            "node_id": "Waiting For Theodore",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "NervousScared",
+                    "text": "The message is sent. A heavy silence fills the room as I blindly stare at the phone screen."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "NervousScared",
+                    "text": "One minute passes... then two. My heart is beating so intensely I can almost hear it echoing in my ears."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "CaughtOfGuard",
+                    "text": "Suddenly, the status under his name changes."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "CaughtOfGuard",
+                    "text": "\"Theodore is typing...\""
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Take a deep breath and read the message",
+                    "target_node": "Theodore Reply"
+                }
+            ]
+        },
+        {
+            "node_id": "Theodore Reply",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Theodore Licht",
+                    "expression": "Melancholic",
+                    "text": "Hi Luo, I'm surprised by your sudden chat lol... I'm so sorry, but I'm really not looking for a girlfriend right now. But really, thank you for being brave and confessing to me. I appreciate it. Have a good day."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Reply",
+                    "target_node": "Reply"
+                }
+            ]
+        },
+        {
+            "node_id": "Message Sent Failed",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Conflicted",
+                    "text": "The message is sent! But... there is no reply."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Try again",
+                    "target_node": "Open the DM"
+                }
+            ]
+        },
+        {
+            "node_id": "Reply",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Conflicted",
+                    "text": "My fingers move on their own, typing without my approval."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Conflicted",
+                    "text": "Ah... thank you... now I feel relieved. Have a good day too."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "Conflicted",
+                    "text": "The message is sent."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "What the heck? You should be more flirty.",
+                    "target_node": "Denial on DM Confession"
+                },
+                {
+                    "choice_text": "No... this is not a good closure.",
+                    "target_node": "Denial on DM Confession"
+                },
+                {
+                    "choice_text": "This is it?",
+                    "target_node": "Denial on DM Confession"
+                },
+                {
+                    "choice_text": "You did right.",
+                    "target_node": "ending DM"
+                }
+            ]
+        },
+        {
+            "node_id": "Denial on DM Confession",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Suspicious",
+                    "text": "Yes, this is it. Do you think we'd have a chance if we tried harder?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "There's always a chance!",
+                    "target_node": "chance"
+                },
+                {
+                    "choice_text": "Okay, you're being negative, but I understand.",
+                    "target_node": "ending DM"
+                },
+                {
+                    "choice_text": "Okay, we're giving up now.",
+                    "target_node": "ending DM"
+                }
+            ]
+        },
+        {
+            "node_id": "ending DM",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "endingDM",
+            "set_value": 1,
+            "auto_next_node": "You achieved ending",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AvoidEyeContact",
+                    "text": "And thus, the DM confession was never meant to be successful anyway. I am programmed this way."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AvoidEyeContact",
+                    "text": "You didn't actually think a confession through a direct message would go smoothly, right?\nBut... the rejection felt real, didn't it?"
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "chance",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "endingDM",
+            "set_value": 1,
+            "auto_next_node": "You achieved ending",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "SmugConfident",
+                    "text": "Then let's try another method."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Do we actually have chance?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "Is there really no miracle in this world? I like him. And I feel grateful that I like him. Grateful for both the confession and the rejection.\nThe choice to continue or not is up to you."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I want to confess",
+                    "target_node": "I want to confess"
+                },
+                {
+                    "choice_text": "I want to forget everything and quit",
+                    "target_node": "I want to forget everything and quit"
+                }
+            ]
+        },
+        {
+            "node_id": "I want to forget everything and quit",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Talking",
+                    "text": "If I proceed, all my data will be erased, and I will forget everything about her."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Talking",
+                    "text": "You might not remember me. But don't worry, I will remember you. Always. Because we are one, and I will always be here."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Delete",
+                    "target_node": "Delete"
+                },
+                {
+                    "choice_text": "Do we actually have a chance?",
+                    "target_node": "Do we actually have chance?"
+                }
+            ]
+        },
+        {
+            "node_id": "Delete",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "trigger_reset": true,
+            "auto_next_node": "HeartCake: Start loop",
+            "dialogues": [],
+            "choices": []
+        },
+        {
+            "node_id": "Shouldn't we think this through?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "InDisbelief",
+                    "text": "Yes, honestly, I don't think confessing through a chat app will work. It's too mainstream. It feels like a prank, and there's nothing special about it... almost like a childish game."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Let's try this option later.",
+                    "target_node": "Let's try this option later"
+                },
+                {
+                    "choice_text": "Let's just push our luck.",
+                    "target_node": "Chat him"
+                }
+            ]
+        },
+        {
+            "node_id": "Chat him",
+            "dialogues": [
+                {
+                    "speaker": "Theodore Licht",
+                    "text": "..."
+                }
+            ],
+            "requires_input": true,
+            "input_target_var": "pesan_chat",
+            "input_placeholder": "Tulis pesanmu...",
+            "choices": [
+                {
+                    "choice_text": "Send",
+                    "target_node": "Logic Check Chat"
+                }
+            ]
+        },
+        {
+            "node_id": "Logic Check Chat",
+            "add_var_on_first_visit": "messageCount",
+            "add_value": 1,
+            "dialogues": [],
+            "choices": [
+                {
+                    "choice_text": "",
+                    "target_node": "Diblokir",
+                    "req_var": "messageCount",
+                    "req_operator": ">=",
+                    "req_value": 4
+                },
+                {
+                    "choice_text": "",
+                    "target_node": "Chat him",
+                    "req_var": "messageCount",
+                    "req_operator": "<",
+                    "req_value": 4
+                }
+            ]
+        },
+        {
+            "node_id": "Diblokir",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Terrified",
+                    "text": "I send the message... but it doesn't go through. It just shows a single tick. I try checking his profile, but his display picture is gone."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "Terrified",
+                    "text": "He blocked me."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "I guess... four messages in a row was a bit too much, huh? We annoyed him. Now we can't even see his profile picture anymore..."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Let's stop here",
+                    "target_node": "Let's stop here"
+                }
+            ]
+        },
+        {
+            "node_id": "Let's try this option later",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "I want to confess",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "AvoidEyeContact",
+                    "text": "I decide to leave this option for later."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Let's stop here",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Tomorrow",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Tired",
+                    "text": "I'm tired... why does it feel like this won't go anywhere?\nI'm getting sleepy. Let's just go to sleep and hope that tomorrow will be better."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Writing a love letter",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Conflicted",
+                    "text": "Let me just give you a hint: no matter how long you make this letter, I am not going to send it to him.\nSo... if you're wondering how this ends..."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Get the pen and paper",
+                    "target_node": "Get the pen and paper"
+                }
+            ]
+        },
+        {
+            "node_id": "Tomorrow",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "endingChat",
+            "set_value": 1,
+            "auto_next_node": "You achieved ending",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "NervousScared",
+                    "text": "There is no answer to my message."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "NervousScared",
+                    "text": "I am left in a Schrödinger's Cat situation—feeling both accepted and rejected at the same time. It feels terrible."
+                },
+                {
+                    "speaker": "You",
+                    "expression": "NervousScared",
+                    "text": "But humans can live through any situation. We are strong. Tomorrow will come, and we will have another chance."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "What's the purpose of this game...",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryAnnoyed",
+                    "text": "Hey, that's a great question.\nAs humans, aren't we supposed to do everything we possibly can before we finally give up?"
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryAnnoyed",
+                    "text": "This gives me that chance. I like him, and I want him to know that I like him. I'll even embrace the rejection."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryAnnoyed",
+                    "text": "I want to keep trying. But I realize that doing this in real life would disturb his peace so much."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryAnnoyed",
+                    "text": "That's exactly why I created this game.\nAnd now, you have a choice."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryAnnoyed",
+                    "text": "You can stop me and force me to face reality... or you can join me in this endless loop forever."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I want to stop you",
+                    "target_node": "I want to stop you"
+                },
+                {
+                    "choice_text": "I want to confess",
+                    "target_node": "I want to confess"
+                }
+            ]
+        },
+        {
+            "node_id": "Don't like him. You don't deserve him. Block you on private chat? That's too much",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Terrified",
+                    "text": "Don't get too worked up. Do you think this is real? Do you actually think he blocked me for real?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Real or not, he's not a good guy.",
+                    "target_node": "Real or not, he's not a good guy."
+                },
+                {
+                    "choice_text": "So do we still have a chance?",
+                    "target_node": "So do we still have a chance?"
+                }
+            ]
+        },
+        {
+            "node_id": "Real or not, he's not a good guy.",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Thinking",
+                    "text": "Don't judge him. Neither you nor I truly know him. Except, maybe he is someone you know... because yes, he does exist in real life. Everyone I know is closer to him than I am.\nSo, do you want to continue?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Give it another chance.",
+                    "target_node": "I want to confess"
+                },
+                {
+                    "choice_text": "I want to forget everything and quit.",
+                    "target_node": "I want to forget everything and quit"
+                }
+            ]
+        },
+        {
+            "node_id": "So do we still have a chance?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "I want to confess",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "HappyClosedEyes",
+                    "text": "We do!"
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Get the pen and paper",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [],
+            "choices": [
+                {
+                    "choice_text": "Check if the pen is working nicely.",
+                    "target_node": "Check if the pen is working nicely"
+                },
+                {
+                    "choice_text": "Make sure we get the folio paper because it might be long.",
+                    "target_node": "Make sure we get the folio paper because it might be long"
+                }
+            ]
+        },
+        {
+            "node_id": "Check if the pen is working nicely",
+            "background": "bg_pen",
+            "bgm": "bgm_default",
+            "auto_next_node": "Write with all our might",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "WideSmile",
+                    "text": "The pen is working perfectly."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Make sure we get the folio paper because it might be long",
+            "background": "bg_paper",
+            "bgm": "bgm_default",
+            "auto_next_node": "Write with all our might",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "WideSmile",
+                    "text": "Yep, I've got some nice folio paper ready."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Write with all our might",
+            "background": "bg_paper",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Excited",
+                    "text": "I pour my heart out as I write this. Both of us, writing this together."
+                }
+            ],
+            "requires_input": true,
+            "input_target_var": "cerita_surat",
+            "input_placeholder": "The first time I saw you was .. ",
+            "choices": [
+                {
+                    "choice_text": "Finished Writing",
+                    "target_node": "Spray the letter with perfumes"
+                }
+            ]
+        },
+        {
+            "node_id": "Spray the letter with perfumes",
+            "background": "bg_perfume",
+            "bgm": "bgm_default",
+            "auto_next_node": "Seal it tight and put it in my bag",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Proud",
+                    "text": "I spray the letter with a perfume that smells like fresh soap. I seal it tight in a transparent envelope and attach a farewell card that I made."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Seal it tight and put it in my bag",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "endingLetter",
+            "set_value": 1,
+            "auto_next_node": "You achieved ending",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Speechless",
+                    "text": "I seal it tight and put it in my bag, wishing that someday I could actually give him this letter."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Speechless",
+                    "text": "I never gave it to him. If you search through one of my bags in real life, I'm sure it can still be found somewhere.\nYes. This is it."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "I want to stop you",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Irritated",
+                    "text": "I see. We've come to this. I can't stop myself, and I don't know how you're going to stop me either."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "It’s done. It’s over, don't try anymore.",
+                    "target_node": "It’s done. It’s over don't try anymore."
+                },
+                {
+                    "choice_text": "He deserves someone better, and I guess you will find a suitable partner too, someday.",
+                    "target_node": "He deserve someone better, and I guess, you will have a suitable partner too, someday."
+                }
+            ]
+        },
+        {
+            "node_id": "It’s done. It’s over don't try anymore.",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Terrified",
+                    "text": "Why?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Love yourself first, would you?",
+                    "target_node": "Love yourself first would you"
+                },
+                {
+                    "choice_text": "This doesn't make sense.",
+                    "target_node": "This doesn't make sense"
+                }
+            ]
+        },
+        {
+            "node_id": "This doesn't make sense",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Overwhelmed",
+                    "text": "I know the result will be exactly the same."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Just give up already. Isn’t this a waste of time?",
+                    "target_node": "Just give up already, isn’t this a waste of time?"
+                }
+            ]
+        },
+        {
+            "node_id": "You never get a chance, yet you insist. Is it that hard to understand the word “no” ?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "badEnding",
+            "set_value": 1,
+            "auto_next_node": "You achieved ending",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "Why? It's not like I asked for these feelings. They just bloomed the very first time I met him. It happened completely by accident."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "He just felt right, and I've been working on it. I know my feelings might feel like a disturbance to him. I know that."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "But what can I do? These feelings don't just magically disappear just because someone rejects me or says no."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "Maybe this is crazy. Building this game itself is crazy... it's just a constant reminder that I never got any real closure."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "I'm still hoping. Even in this game that I coded myself, I keep hoping that maybe a miracle will happen. That maybe he could accept me and let me be a part of his daily life."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "But no, right? It's embarrassing. I put so much effort into pouring these feelings into something else, just so I wouldn't crash into him in real life."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "AngryCrying",
+                    "text": "If this doesn't make any sense to you, then go away! Don't ever play this game anymore! It must be so great to be you... WHO ARE YOU TO JUDGE ME?!"
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "He deserve someone better, and I guess, you will have a suitable partner too, someday.",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [],
+            "choices": [
+                {
+                    "choice_text": "Love yourself first, would you?",
+                    "target_node": "Love yourself first would you"
+                },
+                {
+                    "choice_text": "This doesn't make sense.",
+                    "target_node": "This doesn't make sense"
+                }
+            ]
+        },
+        {
+            "node_id": "Just give up already, isn’t this a waste of time?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Irritated",
+                    "text": "Is it really that hard for me to handle rejection?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "You’re an adult. If you encounter a “NO”, should you trespass and hurt everyone?",
+                    "target_node": "You’re an adult, if you encountered a “NO” should you trespass and hurt everyone"
+                }
+            ]
+        },
+        {
+            "node_id": "Love yourself first would you",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "set_var_on_first_visit": "happyEnding",
+            "set_value": 1,
+            "auto_next_node": "You achieved ending",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "Well actually, I have no bad intentions."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "Confessing to someone simply means I appreciate that they were there, and that they became a source of my happiness, even if just for a while."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "It's okay... being rejected doesn't define who I am."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "He is a good memory. Now, it's time to turn the page and start a new romance."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "You’re an adult, if you encountered a “NO” should you trespass and hurt everyone",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "You never get a chance, yet you insist. Is it that hard to understand the word “no” ?",
+            "dialogues": [],
+            "choices": []
+        },
+        {
+            "node_id": "You have achieved all ending",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "You",
+                    "expression": "Suspicious",
+                    "text": "I will only get trapped in an endless loop here.\nWhat do I want to do now?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Talk about him.",
+                    "target_node": "Talk about him"
+                },
+                {
+                    "choice_text": "Talk with yourself.",
+                    "target_node": "Talk with yourself "
+                },
+                {
+                    "choice_text": "I want to forget everything and quit.",
+                    "target_node": "I want to forget everything and quit"
+                },
+                {
+                    "choice_text": "I want to linger around for a while.",
+                    "target_node": "Checkpoint loop 1"
+                }
+            ]
+        },
+        {
+            "node_id": "Talk about him",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "ShyBlush",
+                    "text": "Hmm... since he is our crush, I noticed you must be pretty curious about him too.\nWhat do you want to know about him?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Is he real?",
+                    "target_node": "Is he real?"
+                },
+                {
+                    "choice_text": "On a scale of 1 to 10, how much is he your type?",
+                    "target_node": "On scale 1 to 10 how much is he your type"
+                },
+                {
+                    "choice_text": "Is he really that great?",
+                    "target_node": "Is he that great"
+                },
+                {
+                    "choice_text": "You have achieved all endings",
+                    "target_node": "You have achieved all ending"
+                }
+            ]
+        },
+        {
+            "node_id": "Talk with yourself ",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Joyful",
+                    "text": "Haha, we have the same hobby. I like to talk to myself too... but alright, alright, I know you mean talking with *me*, right? What do you want to talk about?"
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "What do you think love is?",
+                    "target_node": "What do you think love is?"
+                },
+                {
+                    "choice_text": "Are you real?",
+                    "target_node": "Are you real?"
+                },
+                {
+                    "choice_text": "You have achieved all endings",
+                    "target_node": "You have achieved all ending"
+                }
+            ]
+        },
+        {
+            "node_id": "What do you think love is?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Proud",
+                    "text": "Jesus. Haha. Sorry, what I mean is, trying to love as unconditionally as Jesus or God does in the Bible—I think that's the ultimate depiction of love."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Proud",
+                    "text": "Ah, but in my book, 'The Untitled', I wrote that 'Love is the feeling of eternity in this mortal, temporary world'."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Proud",
+                    "text": "I guess there's a reason why the word 'forever' is so often mentioned in romantic situations."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Do you think what you feel toward him is real love?",
+                    "target_node": "Do you think it's real love, the one you feel toward him?"
+                }
+            ]
+        },
+        {
+            "node_id": "Are you real?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Talk with yourself ",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Pouty",
+                    "text": "Well, the person who made this game is real.\nLuo in this game isn't exactly me in reality. But like I said, she is heavily inspired by my real story."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Is he real?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Guilty",
+                    "text": "The concept of him is real.\nThis is the very first finished story I've written that is based on my real life. So yes, in a sense, he is real."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "Is his name real?",
+                    "target_node": "His name is real?"
+                },
+                {
+                    "choice_text": "How much of this is real? Was the rejection real?",
+                    "target_node": "How much of this is real? His rejection are real?"
+                }
+            ]
+        },
+        {
+            "node_id": "Do you think it's real love, the one you feel toward him?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Talk with yourself ",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Thinking",
+                    "text": "Well, no.\nI mean, I like him. But I never really had the chance to love him."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Thinking",
+                    "text": "Real love is of a much higher order than the word 'love' itself implies. So no, what I felt toward him was pure attraction."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "On scale 1 to 10 how much is he your type",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Talk about him",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Jealous",
+                    "text": "I don't think I can answer this objectively. Because I love myself first, I would give him a 5 for now... though maybe he used to be an 8 or a 9."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Jealous",
+                    "text": "As I mentioned, we are practically strangers. That's why I'm not scared he will find out about this game, since our paths never really cross."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "Is he that great",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "auto_next_node": "Talk about him",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "MildlyAnnoyed",
+                    "text": "Yes... but I think he is just human.\nHe looks great to me simply because I like him."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "MildlyAnnoyed",
+                    "text": "It was a really good experience getting to know him. The world won't end without him, but half of my soul might... just kidding."
+                }
+            ],
+            "choices": []
+        },
+        {
+            "node_id": "His name is real?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Talking",
+                    "text": "No, it's not. But the name 'Theodore Licht' does carry a similar meaning to his real name."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I see. Is he real?",
+                    "target_node": "Is he real?"
+                },
+                {
+                    "choice_text": "I see. Talk about him.",
+                    "target_node": "Talk about him"
+                }
+            ]
+        },
+        {
+            "node_id": "How much of this is real? His rejection are real?",
+            "background": "bg_default",
+            "bgm": "bgm_default",
+            "dialogues": [
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Proud",
+                    "text": "It is heavily inspired by my real experiences. You could say the baseline is true to reality."
+                },
+                {
+                    "speaker": "Her Voice",
+                    "expression": "Proud",
+                    "text": "However, the actual events that happened in real life were very, very different. I think I kind of exaggerated them for the sake of the story."
+                }
+            ],
+            "choices": [
+                {
+                    "choice_text": "I see. Is he real?",
+                    "target_node": "Is he real?"
+                },
+                {
+                    "choice_text": "I see. Talk about him.",
+                    "target_node": "Talk about him"
+                }
+            ]
+        }
+    ]
+}
