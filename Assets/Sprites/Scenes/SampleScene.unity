@@ -1525,64 +1525,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &661537738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 661537740}
-  - component: {fileID: 661537739}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &661537739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661537738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fa89395b9c75d4b944e54a7430d80c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jsonStoryFile: {fileID: 4900000, guid: 77546ddfe7af26c459810ab64a9ab3a7, type: 3}
-  mainMenuPanel: {fileID: 1448176558}
-  gamePanel: {fileID: 1958239364}
-  speakerNameText: {fileID: 510087683}
-  dialogueText: {fileID: 604507050}
-  choicesContainer: {fileID: 592749875}
-  choiceButtonPrefab: {fileID: 7971872594107184054, guid: c415e3b5c6a12d14482c692458b29d85, type: 3}
-  playerInputField: {fileID: 763437147}
-  backgroundImage: {fileID: 117903492}
-  backgroundVideo: {fileID: 932229788}
-  characterSprite: {fileID: 1664510581}
-  bgmSource: {fileID: 295416483}
-  voiceSource: {fileID: 377034488}
-  mainMenuBgmName: 
---- !u!4 &661537740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661537738}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1120.4678, y: 615.0966, z: 1.9023672}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763437145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,6 +1873,63 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!1 &997498398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 997498400}
+  - component: {fileID: 997498399}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &997498399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997498398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fa89395b9c75d4b944e54a7430d80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonStoryFile: {fileID: 4900000, guid: 77546ddfe7af26c459810ab64a9ab3a7, type: 3}
+  mainMenuPanel: {fileID: 1448176559}
+  gamePanel: {fileID: 1958239365}
+  speakerNameText: {fileID: 510087683}
+  dialogueText: {fileID: 604507050}
+  choicesContainer: {fileID: 592749875}
+  choiceButtonPrefab: {fileID: 7971872594107184054, guid: c415e3b5c6a12d14482c692458b29d85, type: 3}
+  playerInputField: {fileID: 763437147}
+  backgroundImage: {fileID: 117903492}
+  characterSprite: {fileID: 1664510581}
+  bgmSource: {fileID: 295416483}
+  voiceSource: {fileID: 377034488}
+  mainMenuBgmName: 
+--- !u!4 &997498400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997498398}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1120.4678, y: 615.0966, z: 1.9023672}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1067837455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2259,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 661537739}
+      - m_Target: {fileID: 997498399}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -2271,7 +2270,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1560121129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2598,8 +2597,8 @@ RectTransform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 997498400}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1571258461}
   - {fileID: 227679849}
-  - {fileID: 661537740}

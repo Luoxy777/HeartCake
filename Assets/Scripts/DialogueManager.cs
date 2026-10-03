@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Video;
 using TMPro;
 
 [System.Serializable]
@@ -45,7 +44,7 @@ public class DialogueLine
     public string expression;
     public string position;
     public string text;
-    public string voice_clip; // [BARU] Audio untuk dialog ini
+    public string voice_clip;
 }
 
 [System.Serializable]
@@ -61,15 +60,15 @@ public class ChoiceData
     public string req_value_string;
 }
 
+
 public class DialogueManager : MonoBehaviour
 {
     [Header("Data")]
     public TextAsset jsonStoryFile;
 
-    // --- [FITUR BARU] SCREEN MANAGEMENT ---
     [Header("Screens")]
-    public GameObject mainMenuPanel; // Panel Layar Awal
-    public GameObject gamePanel;     // Panel Utama Game
+    public Transform mainMenuPanel;
+    public Transform gamePanel;
 
     [Header("UI Text")]
     public TextMeshProUGUI speakerNameText;
@@ -84,15 +83,13 @@ public class DialogueManager : MonoBehaviour
 
     [Header("UI Visuals")]
     public RawImage backgroundImage;
-    public VideoPlayer backgroundVideo;
     public Image characterSprite;
 
-    // --- [FITUR BARU] AUDIO SYSTEM ---
     [Header("Audio")]
-    public AudioSource bgmSource;    // Untuk lagu BGM (diatur ke Loop)
-    public AudioSource voiceSource;  // Untuk Voice Over
-    public string mainMenuBgmName;   // [BARU] Nama file lagu untuk Main Menu
-    private string currentBgmName = ""; // Mengecek BGM apa yang sedang jalan
+    public AudioSource bgmSource;
+    public AudioSource voiceSource;
+    public string mainMenuBgmName;
+    private string currentBgmName = "";
 
     private Dictionary<string, NodeData> storyDictionary;
     private Vector2 defaultMaskPosition;
@@ -103,27 +100,74 @@ public class DialogueManager : MonoBehaviour
     private Dictionary<string, object> playerVars = new Dictionary<string, object>();
     private HashSet<string> visitedNodes = new HashSet<string>();
 
+    // [FITUR BARU] Kunci untuk menghentikan loop error ribuan kali
+    private bool isGameReady = false;
+
     void Start()
     {
-        RectTransform maskRect = characterSprite.transform.parent.GetComponent<RectTransform>();
-        defaultMaskPosition = maskRect.anchoredPosition;
-        defaultMaskScale = maskRect.localScale;
+        try
+        {
+            if (mainMenuPanel == null)
+            {
+                mainMenuPanel = GameObject.Find("MainMenuPanel").transform;
+            }
 
-        StoryData story = JsonUtility.FromJson<StoryData>(jsonStoryFile.text);
-        storyDictionary = new Dictionary<string, NodeData>();
-        foreach (NodeData node in story.nodes) storyDictionary.Add(node.node_id, node);
+            if (gamePanel == null)
+            {
+                gamePanel = GameObject.Find("GamePanel").transform;
+            }
 
-        playerInputField.gameObject.SetActive(false);
+            // Mengumpulkan semua error dalam satu keranjang
+            string daftarKosong = "";
 
-        // --- [FITUR BARU] Menampilkan Main Menu saat game pertama dibuka ---
-        ShowMainMenu();
+            if (mainMenuPanel == null) daftarKosong += "- Main Menu Panel\n";
+            if (gamePanel == null) daftarKosong += "- Game Panel\n";
+            if (playerInputField == null) daftarKosong += "- Player Input Field\n";
+            if (choicesContainer == null) daftarKosong += "- Choices Container\n";
+            if (dialogueText == null) daftarKosong += "- Dialogue Text\n";
+            if (characterSprite == null) daftarKosong += "- Character Sprite\n";
+            if (jsonStoryFile == null) daftarKosong += "- Json Story File\n";
+
+            // Kalau ada satu saja yang kosong, teriakkan semuanya sekaligus!
+            if (daftarKosong != "")
+            {
+                throw new System.Exception("Script di objek [" + gameObject.name + "] punya slot kosong:\n" + daftarKosong);
+            }
+
+            RectTransform maskRect = characterSprite.transform.parent.GetComponent<RectTransform>();
+            if (maskRect == null) throw new System.Exception("STRUKTUR UI SALAH di objek [" + gameObject.name + "]");
+
+            defaultMaskPosition = maskRect.anchoredPosition;
+            defaultMaskScale = maskRect.localScale;
+
+            StoryData story = JsonUtility.FromJson<StoryData>(jsonStoryFile.text);
+            if (story == null || story.nodes == null) throw new System.Exception("ERROR JSON!");
+
+            storyDictionary = new Dictionary<string, NodeData>();
+            foreach (NodeData node in story.nodes) storyDictionary.Add(node.node_id, node);
+
+            playerInputField.gameObject.SetActive(false);
+
+            ShowMainMenu();
+
+            isGameReady = true;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("GAGAL START: " + e.Message);
+            if (dialogueText != null)
+            {
+                dialogueText.text = "ERROR SYSTEM:\n" + e.Message;
+            }
+        }
     }
 
     void Update()
     {
-        // Jangan lanjut jika panel game tidak aktif
-        if (!gamePanel.activeSelf) return;
+        // [KUNCI RAHASIA] Jika Start gagal, hentikan Update agar tidak looping ribuan kali!
+        if (!isGameReady) return;
 
+        if (!gamePanel.gameObject.activeSelf) return;
         if (playerInputField.gameObject.activeSelf || choicesContainer.childCount > 0) return;
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
@@ -132,50 +176,41 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // --- [FITUR BARU] KONTROL MAIN MENU ---
     public void ShowMainMenu()
     {
-        mainMenuPanel.SetActive(true);
-        gamePanel.SetActive(false);
+        mainMenuPanel.gameObject.SetActive(true);
+        gamePanel.gameObject.SetActive(false);
 
-        // Hentikan suara karakter jika ada yang masih bicara
         if (voiceSource != null) voiceSource.Stop();
 
-        // --- [FITUR BARU] PLAY MAIN MENU BGM ---
         if (!string.IsNullOrEmpty(mainMenuBgmName) && currentBgmName != mainMenuBgmName)
         {
             AudioClip menuBgmClip = Resources.Load<AudioClip>("Audio/BGM/" + mainMenuBgmName);
-            if (menuBgmClip != null)
+            if (menuBgmClip != null && bgmSource != null)
             {
                 bgmSource.clip = menuBgmClip;
                 bgmSource.loop = true;
                 bgmSource.Play();
                 currentBgmName = mainMenuBgmName;
-                Debug.Log("[BGM] Playing Main Menu BGM: " + currentBgmName);
-            }
-            else
-            {
-                Debug.LogWarning("[BGM] Gagal meload BGM Main Menu dari Resources/Audio/BGM/" + mainMenuBgmName);
             }
         }
         else if (string.IsNullOrEmpty(mainMenuBgmName))
         {
-            // Jika dikosongkan di inspector, matikan lagu
             if (bgmSource != null) bgmSource.Stop();
             currentBgmName = "";
         }
     }
 
-    // Panggil fungsi ini dari Event "OnClick" tombol PLAY di Main Menu
     public void StartGame()
     {
-        mainMenuPanel.SetActive(false);
-        gamePanel.SetActive(true);
+        if (!isGameReady) return; // Jangan mulai game kalau masih ada error
 
-        // Reset data dari awal untuk jaga-jaga
+        mainMenuPanel.gameObject.SetActive(false);
+        gamePanel.gameObject.SetActive(true);
+
         playerVars.Clear();
         visitedNodes.Clear();
-        //playerVars["checkloopone"] = 3;
+        playerVars["checkloopone"] = 3;
 
         PlayNode("HeartCake: Start loop");
     }
@@ -187,64 +222,39 @@ public class DialogueManager : MonoBehaviour
             currentNode = storyDictionary[nodeID];
             currentLineIndex = 0;
 
-            // --- [FITUR BARU] RESET DATA & EXIT KE MAIN MENU ---
             if (currentNode.trigger_reset)
             {
                 playerVars.Clear();
                 visitedNodes.Clear();
-                Debug.Log("[Sistem] Memori dihapus! Kembali ke Layar Utama...");
-
-                // Kembali ke menu utama
                 ShowMainMenu();
-                return; // Berhenti mengeksekusi node ini karena kita keluar ke menu
+                return;
             }
 
-            // --- [FITUR BARU] BGM SYSTEM ---
             if (!string.IsNullOrEmpty(currentNode.bgm) && currentNode.bgm != currentBgmName)
             {
                 AudioClip newBgm = Resources.Load<AudioClip>("Audio/BGM/" + currentNode.bgm);
-                if (newBgm != null)
+                if (newBgm != null && bgmSource != null)
                 {
                     bgmSource.clip = newBgm;
                     bgmSource.loop = true;
                     bgmSource.Play();
-                    currentBgmName = currentNode.bgm; // Simpan memori bgm saat ini
-                    Debug.Log("[BGM] Playing: " + currentBgmName);
-                }
-                else
-                {
-                    Debug.LogWarning("[BGM] Gagal meload BGM dari Resources/Audio/BGM/" + currentNode.bgm);
+                    currentBgmName = currentNode.bgm;
                 }
             }
 
-            // --- BACKGROUND (GAMBAR/VIDEO) ---
             if (!string.IsNullOrEmpty(currentNode.background))
             {
                 string cleanBgName = System.IO.Path.GetFileNameWithoutExtension(currentNode.background);
-                VideoClip vidClip = Resources.Load<VideoClip>("Videos/" + cleanBgName);
+                string imagePath = "Sprites/Backgrounds/" + cleanBgName;
+                Texture2D bgTex = Resources.Load<Texture2D>(imagePath);
 
-                if (vidClip != null)
+                if (bgTex != null && backgroundImage != null)
                 {
-                    backgroundVideo.clip = vidClip;
-                    backgroundVideo.Play();
-                    backgroundImage.texture = backgroundVideo.targetTexture;
+                    backgroundImage.texture = bgTex;
                     backgroundImage.color = Color.white;
-                }
-                else
-                {
-                    string imagePath = "Sprites/Backgrounds/" + cleanBgName;
-                    Texture2D bgTex = Resources.Load<Texture2D>(imagePath);
-
-                    if (bgTex != null)
-                    {
-                        if (backgroundVideo != null) backgroundVideo.Stop();
-                        backgroundImage.texture = bgTex;
-                        backgroundImage.color = Color.white;
-                    }
                 }
             }
 
-            // Variabel logic
             if (!visitedNodes.Contains(nodeID))
             {
                 visitedNodes.Add(nodeID);
@@ -261,7 +271,10 @@ public class DialogueManager : MonoBehaviour
 
             DisplayNextLine();
         }
-        else { Debug.LogError("Node ID tidak ditemukan: " + nodeID); }
+        else
+        {
+            if (dialogueText != null) dialogueText.text = "ERROR: Node ID [" + nodeID + "] tidak ditemukan!";
+        }
     }
 
     private void ModifyVar(string varName, int value, bool isAdd)
@@ -276,32 +289,26 @@ public class DialogueManager : MonoBehaviour
         if (currentLineIndex < currentNode.dialogues.Count)
         {
             DialogueLine line = currentNode.dialogues[currentLineIndex];
-            speakerNameText.text = line.speaker;
-            dialogueText.text = line.text;
+            if (speakerNameText != null) speakerNameText.text = line.speaker;
+            if (dialogueText != null) dialogueText.text = line.text;
 
-            // --- [FITUR BARU] VOICE OVER SYSTEM ---
-            if (voiceSource != null) voiceSource.Stop(); // Matikan voice dialog sebelumnya
+            if (voiceSource != null) voiceSource.Stop();
 
             if (!string.IsNullOrEmpty(line.voice_clip))
             {
                 AudioClip voClip = Resources.Load<AudioClip>("Audio/Voices/" + line.voice_clip);
-                if (voClip != null)
+                if (voClip != null && voiceSource != null)
                 {
                     voiceSource.clip = voClip;
-                    voiceSource.loop = false; // Voice over tidak boleh nge-loop
+                    voiceSource.loop = false;
                     voiceSource.Play();
-                }
-                else
-                {
-                    Debug.LogWarning("[Audio] Voice clip tidak ditemukan: Resources/Audio/Voices/" + line.voice_clip);
                 }
             }
 
-            // --- SPRITE KARAKTER ---
             string spriteName = line.expression;
             Sprite charImg = Resources.Load<Sprite>("Sprites/Characters/" + spriteName);
 
-            if (charImg != null)
+            if (charImg != null && characterSprite != null)
             {
                 characterSprite.sprite = charImg;
                 characterSprite.gameObject.SetActive(true);
@@ -322,7 +329,7 @@ public class DialogueManager : MonoBehaviour
                         break;
                 }
             }
-            else
+            else if (characterSprite != null)
             {
                 characterSprite.gameObject.SetActive(false);
             }
@@ -331,7 +338,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            if (currentNode.requires_input)
+            if (currentNode.requires_input && playerInputField != null)
             {
                 playerInputField.gameObject.SetActive(true);
                 playerInputField.text = "";
@@ -397,7 +404,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ProcessInputBeforeJump()
     {
-        if (currentNode.requires_input && playerInputField.gameObject.activeSelf)
+        if (currentNode.requires_input && playerInputField != null && playerInputField.gameObject.activeSelf)
         {
             playerVars[currentNode.input_target_var] = playerInputField.text;
             playerInputField.gameObject.SetActive(false);
